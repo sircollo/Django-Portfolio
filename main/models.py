@@ -27,10 +27,16 @@ class Project(models.Model):
 
 
 class About(models.Model):
-  name = models.CharField(max_length=30)
+  first_name = models.CharField(max_length=30)
+  last_name = models.CharField(max_length=30,default='')
   profession = models.CharField(max_length=30)
   details = models.TextField()
-  
+  profile_image=models.ImageField(upload_to = 'abouts/',default='image')
   
   def __str__(self):
-    return self.name
+    return self.first_name
+  
+  @classmethod
+  def my_abouts(cls):
+    abouts = About.objects.all()
+    return abouts
