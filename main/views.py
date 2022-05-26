@@ -8,7 +8,8 @@ def home(request):
     return render(request, 'index.html')
 
 def about(request):
-    return render(request, 'about.html')
+    abouts =About.my_abouts()
+    return render(request, 'about.html', {'abouts':abouts})
 
 def projects(request):
     projects = Project.my_projects()
