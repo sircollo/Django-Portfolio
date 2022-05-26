@@ -1,26 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
 <body>
-<div class="container projects" style="margin-top:10%;">
+<div class="container projects" style="margin-top:8%;">
   <div class="row">
     {% for project in projects %}
       <div class="col-md-3 pt-4" >
           <div class="card-sl">
               <div class="card-image">
-                  <img src="" />
+                  <img src="{{project.project_image.url}}" class="img-responsive" />
               </div>
 
               <a class="card-action" href="#">view<i class="fa fa-heart"></i></a>
               <div class="card-heading">
                   {{project.project_name}}
               </div>
-              <div class="card-text">
- 
-              </div>
-              <div class="card-text">
-                  {{project.creation_date}}
-              </div>
-  
+
           </div>
       </div>
       {% endfor %}
