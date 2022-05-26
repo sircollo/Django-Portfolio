@@ -6,3 +6,4 @@ class ProjectAdmin(admin.ModelAdmin):
   filter_horizontal = ('tags',)
 admin.site.register(Project,ProjectAdmin)
 admin.site.register(tags)
+admin.site.register(About)
