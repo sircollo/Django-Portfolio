@@ -24,3 +24,13 @@ class Project(models.Model):
   def my_projects(cls):
     project = Project.objects.all()
     return project
+
+
+class About(models.Model):
+  name = models.CharField(max_length=30)
+  profession = models.CharField(max_length=30)
+  details = models.TextField()
+  
+  
+  def __str__(self):
+    return self.name
