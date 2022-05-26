@@ -1,1 +1,128 @@
-<h1>about me</h1>
+{% extends 'base.html' %}
+{% block content %}
+{% for about in abouts %}
+<style>
+  .card{
+    border:none;
+
+    position:relative;
+    overflow:hidden;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.card:before{
+    
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:4px;
+    height:100%;
+    background-color:#E1BEE7;
+    transform:scaleY(1);
+    transition:all 0.5s;
+    transform-origin: bottom
+}
+
+.card:after{
+    
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:4px;
+    height:100%;
+    background-color: blue;
+    transform:scaleY(0);
+    transition:all 0.5s;
+    transform-origin: bottom
+}
+
+.card:hover::after{
+    transform:scaleY(1);
+}
+
+
+.fonts{
+    font-size:11px;
+}
+
+.social-list{
+    display:flex;
+    list-style:none;
+    justify-content:center;
+    padding:0;
+}
+
+.social-list li{
+    padding:10px;
+    color:#8E24AA;
+    font-size:19px;
+}
+
+
+.buttons button:nth-child(1){
+       border:1px solid blue !important;
+       color:black;
+       height:40px;
+}
+
+.buttons button:nth-child(1):hover{
+       border:1px solid blue !important;
+       color: #fff;
+       height:40px;
+       background-color:blue;
+}
+
+.buttons button:nth-child(2){
+       border:1px solid blue !important;
+       background-color:blue;
+       color:#fff;
+        height:40px;
+}
+</style>
+<div class="container mt-5 pt-5">
+    
+  <div class="row d-flex justify-content-center">
+      
+      <div class="col-md-7">
+          
+          <div class="card p-3 py-4">
+              
+              <div class="text-center">
+                  <img src="{{about.profile_image.url}}" width="200"height="200" class="rounded-circle">
+              </div>
+              
+              <div class="text-center mt-3">
+                  <!-- <span class="bg-secondary p-1 px-4 rounded text-white"></span> -->
+                  <h5 class="mt-2 mb-0">{{about.first_name}} {{about.last_name}}</h5>
+                  <span>{{about.profession}}</span>
+                  
+                  <div class="px-4 mt-1">
+                      <p class="fonts">{{about.details}}</p>
+                  
+                  </div>
+
+                  
+                  <div class="buttons">
+                      
+                      <button class="btn btn-outline-primary px-4">Message</button>
+                      <button class="btn btn-primary px-4 ms-3">Contact</button>
+                  </div>
+                  
+                  
+              </div>
+              
+             
+              
+              
+          </div>
+          
+      </div>
+      
+  </div>
+  
+</div>
+{% endfor %}
+{% endblock %}
