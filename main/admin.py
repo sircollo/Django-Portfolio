@@ -7,3 +7,6 @@ class ProjectAdmin(admin.ModelAdmin):
 admin.site.register(Project,ProjectAdmin)
 admin.site.register(tags)
 admin.site.register(About)
+
+
+
