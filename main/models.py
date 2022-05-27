@@ -32,6 +32,7 @@ class About(models.Model):
   profession = models.CharField(max_length=30)
   details = models.TextField()
   profile_image=models.ImageField(upload_to = 'abouts/',default='image')
+  email = models.EmailField(max_length=50,unique=True,default='')
   
   def __str__(self):
     return self.first_name
