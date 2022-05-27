@@ -10,7 +10,7 @@
                   <img src="{{project.project_image.url}}" class="img-responsive" />
               </div>
 
-              <a class="card-action" href="#">view<i class="fa fa-heart"></i></a>
+              <a class="card-action" href="{% url 'project' project.pk %}">view<i class="fa fa-heart"></i></a>
               <div class="card-heading">
                   {{project.project_name}}
               </div>
