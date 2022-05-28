@@ -14,7 +14,7 @@ class Project(models.Model):
   creation_date = models.DateTimeField(auto_now_add=True)
   tags = models.ManyToManyField(tags)
   project_image = models.ImageField(upload_to = 'projects/',default='image')
-
+  preview_url = models.URLField(max_length=50,default='')
   
   
   def __str__(self):
