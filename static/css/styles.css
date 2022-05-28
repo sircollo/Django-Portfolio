@@ -1393,3 +1393,34 @@ a {
       box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
   }
 }
+/* scrolling text */
+div.scrolling-limit{
+  width: 350px;
+  height: 50px;
+  display: flex;
+  justify-content:end;
+  background-color: transparent;
+  overflow:hidden;
+  white-space:nowrap;
+  font-size: 35px;
+  position: relative;
+  left: 35%;
+  
+}
+
+div.scrolling{
+  position: relative;
+  -webkit-animation: scroll 20s infinite linear;;
+  -moz-animation: scroll 20s infinite linear;
+  -o-animation: scroll 20s infinite linear;
+  animation: scroll 20s infinite linear;
+}
+
+@keyframes scroll{
+    0%   {left: 500px;}
+    100% {left: -950px;}
+}
+@-webkit-keyframes scroll{
+    0%   {left: 500px;}
+    100% {left: -950px;}
+}
